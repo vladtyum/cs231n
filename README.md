@@ -23,7 +23,7 @@ Meanwhile CS231n use
 
 six.moves used because
 [link >> six](https://media.readthedocs.org/pdf/six/latest/six.pdf)
-> Python 3 reorganized the standard library and moved several functions to different modules.
+> Python 3 reorganised the standard library and moved several functions to different modules.
 Six provides a consistent
 interface to them through the fake
 six.moves
@@ -69,11 +69,11 @@ plt.show()
 Reshaping thing is a bit unclear, can take it as black box for now
 
 
-Duck.Really forgot nparray stuff
-getting back to [https://www.python-course.eu/numpy_create_arrays.php](https://www.python-course.eu/numpy_create_arrays.php)
+Refresh memory about numpy array stuff
+[https://www.python-course.eu/numpy_create_arrays.php](https://www.python-course.eu/numpy_create_arrays.php)
 
 
-```Python
+```python
 x = np.array([ [67, 63, 87],
                [77, 69, 59],
                [85, 87, 99],
@@ -101,4 +101,16 @@ print(x)
 
 if so why converstion image above has to be so complicated
 `single_img_reshaped = np.transpose(np.reshape(single_img,(3, 32,32)), (1,2,0))`
-[ ] let's try to play with resizing 
+[ ] let's try to play with resizing
+
+
+25 Dec 2017  23:55
+
+Converting start making sense if take small picture 5*5 RGBA
+and play with it
+
+This was [quick-tour-of-numpy](http://www.pythoninformer.com/python-libraries/numpy/quick-tour-of-numpy/) useful
+
+❓ Question about that weird CIFAR transformation still stands
+
+📝 It would be cool to write converter which takes arrays, and put numbers for each pixel together by small font and on top of it bigger pixel with generated colour. That'll be very informative and handy.
