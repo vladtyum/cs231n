@@ -114,3 +114,38 @@ This was [quick-tour-of-numpy](http://www.pythoninformer.com/python-libraries/nu
 ❓ Question about that weird CIFAR transformation still stands
 
 📝 It would be cool to write converter which takes arrays, and put numbers for each pixel together by small font and on top of it bigger pixel with generated colour. That'll be very informative and handy.
+
+
+26 Dec 2017 16:55
+### KNN classifier
+
+cs231n put too many cool-compicated things in one bowl so it becomes black box.
+
+let's do simple KNN things
+
+[medium/k-nearest-neighbors](https://medium.com/@adi.bronshtein/a-quick-introduction-to-k-nearest-neighbors-algorithm-62214cea29c7)  
+
+good to go through later [SkiKit MachineLearning](http://scikit-learn.org/stable/tutorial/statistical_inference/supervised_learning.html)
+
+##### KNN is a non-parametric, lazy learning algorithm.
+`non-parametric`**does not make any assumptions on the underlying data distribution.**
+
+> Therefore, KNN could and probably should be one of the first choices for a classification study when there is little or no prior knowledge about the distribution data.
+
+`lazy`(as opposed to an eager algorithm). **does not use the training data points to do any generalization**
+
+Then deeper and deeper
+Distance metric, similarity function
+all-together brings me to
+[ImageSearch GettingStarted](https://www.pyimagesearch.com/2014/01/27/hobbits-and-histograms-a-how-to-guide-to-building-your-first-image-search-engine-in-python/)
+Even that not deep enough
+
+Depper will be histogram calculation
+
+
+[opencv.org/3.1.0/.../histogram_begins.html](https://docs.opencv.org/3.1.0/d1/db7/tutorial_py_histogram_begins.html)
+
+> could be useful reading  
+> [Photo Termins](https://www.cambridgeincolour.com/learn-photography-concepts.htm)
+
+I want to take histogram from camera and show it on the screen
