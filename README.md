@@ -148,4 +148,46 @@ Depper will be histogram calculation
 > could be useful reading  
 > [Photo Termins](https://www.cambridgeincolour.com/learn-photography-concepts.htm)
 
-I want to take histogram from camera and show it on the screen
+I want to make  
+#### Histogram from camera and show it on the screen
+
+start with simple histogram
+
+this way you can see histogram and withdraw data
+showed me that my camera's settings are wrong
+way too bright
+
+```python
+import cv2
+import matplotlib.pyplot as plt
+
+cap = cv2.VideoCapture(0)
+
+while(True):
+    ret, frame = cap.read()
+
+    color = ('b','g','r')
+    for i,col in enumerate(color):
+        histr = cv2.calcHist([frame],[i],None,[256],[0,256])
+        plt.plot(histr,color = col)
+        plt.xlim([0,256])
+    plt.show()
+
+    cv2.imshow('frame',frame)
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
+```
+
+
+
+Ahhh,  not soso easy to animate stuff from camera....
+
+Need to learn matplotlib animation
+
+[matplotlib.animation.FuncAnimation](https://matplotlib.org/api/_as_gen/matplotlib.animation.FuncAnimation.html#matplotlib.animation.FuncAnimation)
+Thats' my function to go
+
+Let's do something simple with it
