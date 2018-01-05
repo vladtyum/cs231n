@@ -256,3 +256,25 @@ but everything in simpliest KNN based on 3D histogramm, which is still not that 
 
 5 January 2018
 Still not clear
+
+> The code here is very simple — it’s just an extension from the code above. We are now computing an 8x8x8 histogram for each of the RGB channels. We can’t visualize this histogram, but we can see that the shape is indeed (8, 8, 8) with 512 values. Again, treating the 3D histogram as a feature vector can be done by simply flattening the array.
+> ["simple"](https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/)
+
+Still issue is 3D histogramms, how are they calculated, how to understand them
+
+This post give some understanding, but done with G’MIC, which i'd prefer to avoid for now
+http://opensource.graphics/visualizing-the-3d-point-cloud-of-rgb-colors/  
+better find similar with OpenCV PyPlot
+
+this beutiful guy made it well, but a little bit too dense for me 
+https://github.com/tody411/ColorHistogram
+https://github.com/tody411/ColorHistogram/raw/master/color_histogram/results/flower_0_hist3D.png
+
+
+http://marksolters.com/programming/2015/02/27/rgb-histograph.html
+this one is simplier 
+
+
+
+
+
