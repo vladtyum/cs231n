@@ -191,3 +191,68 @@ Need to learn matplotlib animation
 Thats' my function to go
 
 Let's do something simple with it
+
+
+29-Dec-2017
+Okey, histogram from camera is not as easy as i expected, but still I should be able to debug things realtime from camera.SHould get back later to it
+so far is best what i've got working simply and well
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+cap = cv2.VideoCapture(0)
+
+def update(i):
+	ret,frame = cap.read()
+	hist = cv2.calcHist([frame],[0],None,[256],[0,256])
+	plt.cla()
+	plt.plot(hist)
+
+
+ani = FuncAnimation(plt.gcf(), update, interval=200)
+plt.show()
+```
+
+[https://www.pyimagesearch ... -guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/](https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/)
+
+
+Wohoooo!!!
+Worked , thanks to [https://www.pyimagesearch.com ... utilizing-color-histograms-for-computer-vision-and-image-search-engines/](https://www.pyimagesearch.com/2014/01/22/clever-girl-a-guide-to-utilizing-color-histograms-for-computer-vision-and-image-search-engines/)
+```python
+import cv2
+import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+
+cap = cv2.VideoCapture(0)
+colors = ("b", "g", "r")
+
+def grab_frame(cap):
+    ret,frame = cap.read()
+    return frame
+
+
+def update(i):
+    #firstly clean what was before on the plot
+    plt.cla()
+    chans = cv2.split(grab_frame(cap))
+    for (chan, color) in zip(chans, colors):
+        hist = cv2.calcHist([chan], [0], None, [256], [0, 256])
+        plt.plot(hist, color = color)
+        plt.xlim([0, 256])
+
+
+ani = FuncAnimation(plt.gcf(), update, interval=50)
+
+plt.show()
+```
+
+
+3 January 2018
+Happines was so close
+I thought understanding 2d histograms is enough to move to recognition algorithm,
+but everything in simpliest KNN based on 3D histogramm, which is still not that clear for me
+
+5 January 2018
+Still not clear
