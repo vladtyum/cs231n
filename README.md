@@ -266,15 +266,81 @@ This post give some understanding, but done with G’MIC, which i'd prefer to av
 http://opensource.graphics/visualizing-the-3d-point-cloud-of-rgb-colors/  
 better find similar with OpenCV PyPlot
 
-this beutiful guy made it well, but a little bit too dense for me 
+this beutiful guy made it well, but a little bit too dense for me
 https://github.com/tody411/ColorHistogram
 https://github.com/tody411/ColorHistogram/raw/master/color_histogram/results/flower_0_hist3D.png
 
 
 http://marksolters.com/programming/2015/02/27/rgb-histograph.html
-this one is simplier 
+this one is simplier
+
+Let's do this way,  make 4x4 pixels image
+learn it's format again,
+generate it's histogram and get clear about the concept
 
 
+this still not giving me clear understanding
+
+```python
+import cv2
+import numpy as np
+from matplotlib import pyplot as plt
 
 
+image= cv2.imread("transp.png")
 
+print(image)
+colors = ("b", "g", "r")
+hist = cv2.calcHist([image], [0, 1, 2],
+	None, [4, 4, 4], [0, 256, 0, 256, 0, 256])
+print(hist)
+print("3D histogram shape: %s, with %d values" % (
+	hist.shape, hist.flatten().shape[0]))
+```
+
+```perl
+[[[  0   0   0]
+  [  0   0   0]
+  [  0   0   0]
+  [  0   0   0]]
+
+ [[  0   0 100]
+  [  0   0 100]
+  [  0   0 100]
+  [  0   0 100]]
+
+ [[255  50   0]
+  [255  50   0]
+  [100 255   0]
+  [100 255   0]]
+
+ [[255 255 255]
+  [255 255 255]
+  [255 255 255]
+  [255 255 255]]]
+[[[ 4.  4.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]]
+
+ [[ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 2.  0.  0.  0.]]
+
+ [[ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]]
+
+ [[ 2.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  0.]
+  [ 0.  0.  0.  4.]]]
+3D histogram shape: (4, 4, 4), with 64 values
+```
+
+What I've learned after so may days breaking my head over it , is - it's first of all way to extract some info from picture, make some analysis of it. 
+
+It's already less then remembering RGB values of every pixel, and do distance calculations for every other Image.
+Here you just calculate distance of histograms
