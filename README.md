@@ -340,7 +340,42 @@ print("3D histogram shape: %s, with %d values" % (
 3D histogram shape: (4, 4, 4), with 64 values
 ```
 
-What I've learned after so may days breaking my head over it , is - it's first of all way to extract some info from picture, make some analysis of it. 
+What I've learned after so may days breaking my head over it , is - it's first of all way to extract some info from picture, make some analysis of it.
 
 It's already less then remembering RGB values of every pixel, and do distance calculations for every other Image.
 Here you just calculate distance of histograms
+YES!
+Time to commit
+
+
+10 Jan 2018
+Here coming to feature vectors. And all these operations on them
+going through the book
+
+>Concretely (for us), vectors are points in some finite-dimensional space. Although
+you might not think of your data as vectors, they are a good way to represent numeric
+data.
+
+question is 'Why'?
+https://brilliant.org/wiki/feature-vector/
+> Feature vectors are the equivalent of vectors of explanatory variables that are used in statistical procedures such as linear regression.
+
+explanatory variables - Independent variables
+as i understand - coefficients
+https://en.wikipedia.org/wiki/Dependent_and_independent_variables#Statistics_synonyms
+
+Back to vectors and dimensions
+https://stackoverflow.com/questions/38379905/what-is-vector-in-terms-of-machine-learning
+
+From here, I have to take so far that it's only way of recording things,
+I don't really agree with that , but llet's see  
+
+>One problem with this approach is that we will want to perform arithmetic on vec‐
+tors. Because Python lists aren’t vectors (and hence provide no facilities for vector
+arithmetic), we’ll need to build these arithmetic tools ourselves. So let’s start with that.
+
+right away
+
+to make sure, let's get back to vector arithmetic  
+http://www.physicsclassroom.com/class/vectors/Lesson-1/Component-Addition
+beautiful materilal, let's Pocket itfor further reading and proceed with book
